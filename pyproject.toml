@@ -1,0 +1,24 @@
+[project]
+name = "vest-build-dotnet"
+version = "0.0.1"
+description = "Vest build support for .NET projects"
+readme = "README.md"
+authors = [
+    { name = "ascpixi", email = "ascpixi@proton.me" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "packaging>=26.0",
+    "vest-build>=0.1.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "vest.dotnet"
+namespace = true
+
+[tool.uv.sources]
+vest-build = { path = "../vest", editable = true }
