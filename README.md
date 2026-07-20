@@ -1,6 +1,6 @@
 # Vest support for .NET
 [![image](https://img.shields.io/pypi/v/vest-build-dotnet.svg)](https://pypi.python.org/pypi/vest-build-dotnet)
-[![image](https://img.shields.io/pypi/l/vest-build-dotnet.svg)](https://github.com/ascpixi/vest-dotnet/blob/main/LICENSE)
+[![image](https://img.shields.io/pypi/l/vest-build-dotnet.svg)](https://github.com/ascpixi/vest-dotnet/blob/master/LICENSE)
 [![image](https://img.shields.io/pypi/pyversions/vest-build-dotnet.svg)](https://pypi.python.org/pypi/vest-build-dotnet)
 [![Actions status](https://github.com/ascpixi/vest-dotnet/workflows/CI/badge.svg)](https://github.com/ascpixi/vest-dotnet/actions)
 
