@@ -2,15 +2,33 @@
 name = "vest-build-dotnet"
 version = "0.0.1"
 description = "Vest build support for .NET projects"
+authors = [ { name = "ascpixi", email = "ascpixi@proton.me" } ]
 readme = "README.md"
-authors = [
-    { name = "ascpixi", email = "ascpixi@proton.me" }
-]
 requires-python = ">=3.11"
+
+keywords = ["vest", "build",  "build-system", "dotnet", ".net", "csharp", "native-aot", "ilc", "msbuild", "compilation", "packaging"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: C#",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Compilers",
+    "Typing :: Typed",
+]
+
 dependencies = [
     "packaging>=26.0",
-    "vest-build>=0.1.0",
+    "vest-build>=0.0.2",
 ]
+
+[project.urls]
+Repository = "https://github.com/ascpixi/vest-dotnet"
 
 [build-system]
 requires = ["uv_build>=0.9.18,<0.10.0"]
@@ -19,6 +37,3 @@ build-backend = "uv_build"
 [tool.uv.build-backend]
 module-name = "vest.dotnet"
 namespace = true
-
-[tool.uv.sources]
-vest-build = { path = "../vest", editable = true }

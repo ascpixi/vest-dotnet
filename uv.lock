@@ -56,17 +56,15 @@ wheels = [
 
 [[package]]
 name = "vest-build"
-version = "0.0.1"
-source = { editable = "../vest" }
+version = "0.0.2"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "packaging" },
     { name = "rich" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "packaging", specifier = ">=26.0" },
-    { name = "rich", specifier = ">=15.0.0" },
+sdist = { url = "https://files.pythonhosted.org/packages/12/9c/bd4d77c53104d5f9ac571a8b520390d8a4aafb9176ce283b4fbd0e1ea563/vest_build-0.0.2.tar.gz", hash = "sha256:e8a870a7b2504f0d3080cb451f8825ad94eb55ca2f368c56b5b3ec954b4db481", size = 18885, upload-time = "2026-07-20T23:28:16.558Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ea/c9/0c98f0f0fda489dd25584901ae7ddc665e48f8c58404b2c3d124b80e2554/vest_build-0.0.2-py3-none-any.whl", hash = "sha256:6642513603c081c79d20e4a1e4d54be4b90a62184e1b03e8a23675f03c640b32", size = 23938, upload-time = "2026-07-20T23:28:17.466Z" },
 ]
 
 [[package]]
@@ -81,5 +79,5 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "packaging", specifier = ">=26.0" },
-    { name = "vest-build", editable = "../vest" },
+    { name = "vest-build", specifier = ">=0.0.2" },
 ]
