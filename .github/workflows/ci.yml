@@ -12,12 +12,6 @@ jobs:
       - name: Checkout vest-build-dotnet
         uses: actions/checkout@v4
 
-      - name: Checkout vest-build
-        uses: actions/checkout@v4
-        with:
-          repository: ascpixi/vest
-          path: ../vest
-
       - name: Install uv
         uses: astral-sh/setup-uv@v6
         with:
