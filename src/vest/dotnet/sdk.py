@@ -63,7 +63,7 @@ def _dotnet(
         f"--artifacts-path", artifact_dir()
     ]
 
-    for (k, v) in host().parameters:
+    for (k, v) in host().parameters.items():
         if not k.startswith("--"):
             continue # avoid exposing short-form parameters
 
