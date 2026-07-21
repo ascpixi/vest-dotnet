@@ -54,6 +54,7 @@ def _dotnet(
     configuration: str,
     *,
     verbosity: DotnetVerbosity = "quiet",
+    restore: bool = True,
     properties: dict[str, str] = {}
 ):
     final_props: list[str] = [
@@ -80,6 +81,7 @@ def _dotnet(
         action,
         "-c", configuration,
         *(["-r", rid] if rid else []),
+        *([] if restore else ["--no-restore"]),
         "-v", verbosity,
         "-tl:off",
         "--nologo",
@@ -166,6 +168,7 @@ def dotnet_publish(
     rid: str | None = None,
     *,
     verbosity: DotnetVerbosity = "quiet",
+    restore: bool = True,
     properties: dict[str, str] = {}
 ) -> DotnetPublishArtifacts:
     """
@@ -183,6 +186,7 @@ def dotnet_publish(
         verbosity = verbosity,
         configuration = configuration,
         rid = rid,
+        restore = restore,
         properties = properties
     )
 
@@ -209,6 +213,7 @@ def dotnet_build(
     rid: str | None = None,
     *,
     verbosity: DotnetVerbosity = "quiet",
+    restore: bool = True,
     properties: dict[str, str] = {}
 ) -> DotnetBuildArtifacts:
     """
@@ -226,6 +231,7 @@ def dotnet_build(
         verbosity = verbosity,
         configuration = configuration,
         rid = rid,
+        restore = restore,
         properties = properties
     )
 
