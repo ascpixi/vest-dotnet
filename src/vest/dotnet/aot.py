@@ -30,14 +30,14 @@ def ilc_compile(
     @target_arch: Specifies the architecture to compile for, e.g. `x64` or `arm64`.
     @target_os: Specifies the ABI and binary format to compile for, e.g. `linux` or `windows`.
     @stdlib_assembly: The name of the assembly to consider the standard library.
-    @method_body_fold: If `"true`", identical method bodies will be merged (folded).
+    @method_body_fold: If `True`, identical method bodies will be merged (folded).
     @optimization: Controls program optimization.
-    @emit_debug_info: If `"true"`, debug information will be included in the object file.
+    @emit_debug_info: If `True`, debug information will be included in the object file.
     @codegen_options: Code generation options in the form of `<key>=<value>`. See https://github.com/dotnet/runtime/blob/main/src/coreclr/jit/jitconfigvalues.h#L32 for details.
-    @pre_init_statics: If `"true"`, static fields will be evaluated at compile-time (if possible).
-    @generate_reflection_data: If `"true"`, reflection data will be included with the object file.
-    @direct_pinvoke: A list of libraries to call the functions of directly, without a P/Invoke stub/wrapper. 
-    @nativelib: If `"true"`, the IL should be compiled as a static or shared library.
+    @pre_init_statics: If `True`, static fields will be evaluated at compile-time (if possible).
+    @generate_reflection_data: If `True`, reflection data will be included with the object file.
+    @direct_pinvoke: A list of libraries to call the functions of directly, without a P/Invoke stub/wrapper.
+    @nativelib: If `True`, the IL should be compiled as a static or shared library.
     """
 
     args = [
@@ -47,16 +47,15 @@ def ilc_compile(
         *[f"-r:{x}" for x in references],
         f"--targetos:{target_os}", # This option only chooses the ABI and binary format - for 'linux', the pair is System V and ELF.
         f"--targetarch:{target_arch}",
-        *maybe("--debug", emit_debug_info == "true"),
+        *maybe("--debug", emit_debug_info),
         *maybe(f"--systemmodule:{stdlib_assembly}", stdlib_assembly is not None),
-        *maybe("--preinitstatics", pre_init_statics == "true"),
-        *maybe("--methodbodyfolding", method_body_fold == "true"),
-        *maybe("--nativelib", nativelib == "true"),
-        *maybe("--noscan", disable_il_scanner == "true"),
+        *maybe("--preinitstatics", pre_init_statics),
+        *maybe("--methodbodyfolding", method_body_fold),
+        *maybe("--nativelib", nativelib),
+        *maybe("--noscan", disable_il_scanner),
         *[f"--directpinvoke:{x}" for x in direct_pinvoke],
-        f"--reflectiondata:{'all' if generate_reflection_data == 'true' else 'none'}",
-        "--verbose",
-        "--noscan"
+        f"--reflectiondata:{'all' if generate_reflection_data else 'none'}",
+        "--verbose"
     ]
 
     if optimization != "disable":
