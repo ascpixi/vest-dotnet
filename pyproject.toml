@@ -1,6 +1,6 @@
 [project]
 name = "vest-build-dotnet"
-version = "0.0.1"
+version = "0.0.2"
 description = "Vest build support for .NET projects"
 authors = [ { name = "ascpixi", email = "ascpixi@proton.me" } ]
 readme = "README.md"
