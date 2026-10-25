@@ -11,6 +11,7 @@ from packaging import version
 from vest.common.collections import maybe, single
 from vest.spec.types import Component
 from vest.spec.core import host, run, artifact_dir
+from vest.dotnet.diagnostics import msbuild_formatter
 
 DotnetVerbosity = Literal["quiet", "minimal", "normal", "detailed", "diagnostic"]
 
@@ -86,7 +87,7 @@ def _dotnet(
         "-tl:off",
         "--nologo",
         *final_props
-    ])
+    ], formatter = msbuild_formatter())
 
     process = subprocess.run(
         [
