@@ -56,20 +56,20 @@ wheels = [
 
 [[package]]
 name = "vest-build"
-version = "0.0.2"
+version = "0.0.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "packaging" },
     { name = "rich" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/12/9c/bd4d77c53104d5f9ac571a8b520390d8a4aafb9176ce283b4fbd0e1ea563/vest_build-0.0.2.tar.gz", hash = "sha256:e8a870a7b2504f0d3080cb451f8825ad94eb55ca2f368c56b5b3ec954b4db481", size = 18885, upload-time = "2026-07-20T23:28:16.558Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/18/14/7e9589b2cc384db4c8a43c22bc4d16e0cf753631bbf74211c94b173c01e3/vest_build-0.0.4.tar.gz", hash = "sha256:987ecda0565a93a0a4ecc23e006c2ed81baa8e06af3201937eba4023752b258d", size = 21315, upload-time = "2026-10-25T14:33:53.213Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ea/c9/0c98f0f0fda489dd25584901ae7ddc665e48f8c58404b2c3d124b80e2554/vest_build-0.0.2-py3-none-any.whl", hash = "sha256:6642513603c081c79d20e4a1e4d54be4b90a62184e1b03e8a23675f03c640b32", size = 23938, upload-time = "2026-07-20T23:28:17.466Z" },
+    { url = "https://files.pythonhosted.org/packages/fc/1b/c207bbdbe4ec088c5a0bee7faa767d7a73d4d01122b991234165f9e9c4d2/vest_build-0.0.4-py3-none-any.whl", hash = "sha256:87de020f773be0c5262dd33e04a2963243fc7802b7b4187bb9409264049d0413", size = 26847, upload-time = "2026-10-25T14:33:54.048Z" },
 ]
 
 [[package]]
 name = "vest-build-dotnet"
-version = "0.0.3"
+version = "0.0.4"
 source = { editable = "." }
 dependencies = [
     { name = "packaging" },
@@ -79,5 +79,5 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "packaging", specifier = ">=26.0" },
-    { name = "vest-build", specifier = ">=0.0.2" },
+    { name = "vest-build", specifier = ">=0.0.4" },
 ]

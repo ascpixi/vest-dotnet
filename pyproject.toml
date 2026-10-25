@@ -1,6 +1,6 @@
 [project]
 name = "vest-build-dotnet"
-version = "0.0.3"
+version = "0.0.4"
 description = "Vest build support for .NET projects"
 authors = [ { name = "ascpixi", email = "ascpixi@proton.me" } ]
 readme = "README.md"
@@ -24,7 +24,7 @@ classifiers = [
 
 dependencies = [
     "packaging>=26.0",
-    "vest-build>=0.0.2",
+    "vest-build>=0.0.4",
 ]
 
 [project.urls]
