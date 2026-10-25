@@ -93,6 +93,7 @@ def _dotnet(
         [
             "dotnet",
             "build",
+            "--no-restore",
             "-c", configuration,
             *(["-r", rid] if rid else []),
             *final_props,
